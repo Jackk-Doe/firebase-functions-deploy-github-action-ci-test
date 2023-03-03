@@ -4,5 +4,5 @@ const functions = require("firebase-functions");
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 exports.tests = functions.https.onRequest(async (request, response) => {
-  return response.send("Hello from Firebase! UPDATED");
+  return response.send("Hello from Firebase!!!");
 });
