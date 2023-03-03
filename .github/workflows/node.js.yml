@@ -3,11 +3,16 @@ name: Continous deployment of firebase functions to Firebase project
 on:
   push:
     branches: ["main"]
+  # pull_request:
+  #   branches: ["main"]
   pull_request:
     branches: ["main"]
+    types:
+      - closed
 
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: checkout branch
