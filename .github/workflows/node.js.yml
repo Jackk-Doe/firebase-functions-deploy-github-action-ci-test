@@ -24,7 +24,7 @@ jobs:
 
       - name: Add sokxay.json file
         working-directory: functions
-        run: printf %s ${{ secrets.SOKXAY }} >> sokxay.json
+        run: echo -e ${{ secrets.SOKXAY }} >> sokxay.json
 
       - name: Deploy function to Firebase
         uses: docker://w9jds/firebase-action:master
