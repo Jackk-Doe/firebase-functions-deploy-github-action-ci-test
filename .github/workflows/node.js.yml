@@ -22,9 +22,15 @@ jobs:
         working-directory: functions
         run: npm install
 
-      - name: Add sokxay.json file
+      - name: Create JSON files
         working-directory: functions
-        run: echo ${{ secrets.SOKXAY }} >> sokxay.json
+        run: |
+          echo ${{ secrets.SOKXAYEN }} | base64 -d > sokxay.json
+
+      # - name: Add sokxay.json file
+      #   working-directory: functions
+      #   run: |
+      #     echo '${{ secrets.SOKXAY }}' > sokxay.json
 
       - name: Deploy function to Firebase
         uses: docker://w9jds/firebase-action:master
