@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install npm packages
-        run: |
-          cd functions
-          npm install
+        working-directory: functions
+        run: npm install
 
       - name: Deploy function to Firebase
         uses: w9jds/firebase-action@master
