@@ -18,9 +18,9 @@ jobs:
         run: npm install
 
       - name: Deploy function to Firebase
-        uses: w9jds/firebase-action@master
+        uses: docker://w9jds/firebase-action:master
         with:
-          args: deploy --only functions --force
+          args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           
