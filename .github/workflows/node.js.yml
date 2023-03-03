@@ -22,6 +22,10 @@ jobs:
         working-directory: functions
         run: npm install
 
+      - name: Add sokxay.json file
+        working-directory: functions
+        run: printf %s $SOKXAY >> sokxay.json
+
       - name: Deploy function to Firebase
         uses: docker://w9jds/firebase-action:master
         with:
